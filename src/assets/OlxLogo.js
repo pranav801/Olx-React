@@ -1,14 +1,19 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 
 export default  function OlxLogo() {
+
+  const history = useHistory()
+
     return(  
-          <svg
+          <svg onClick={()=>history.push('/')}
         width="48px"
         height="48px"
         viewBox="0 0 1024 1024"
         data-aut-id="icon"
         className
         fillRule="evenodd"
+        cursor= "pointer"
       >
         <path
           className="rui-77aaa"

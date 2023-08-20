@@ -11,16 +11,11 @@ function View() {
   const {firebase} = useContext(FirebaseContext)
 
   useEffect(()=>{
-    const userId = ''
-    try{
-      const {userId} = postDetails
-    }
-    catch{
-    }
+    const {userId} = postDetails
     firebase.firestore().collection('users').where('id','==',userId).get().then((res)=>{
       res.forEach(element => {
         element.map((result)=>{
-          console.log(result);
+          console.log('This is Anono =>> ',result);
         })
       });
     })

@@ -19,9 +19,11 @@ function App() {
       setUser(user)
     })
   })
+  
   return (
       <div>
         <Post>
+
           <Router>
             
             <Route exact path='/'>
@@ -37,7 +39,7 @@ function App() {
             </Route>
 
             <Route path='/create'>
-              <Create></Create>
+              <Create/>
             </Route>
 
             <Route path='/view-post'>
@@ -45,6 +47,7 @@ function App() {
             </Route>
 
           </Router>
+          
         </Post>
       </div>
   );

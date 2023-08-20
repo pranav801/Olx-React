@@ -1,6 +1,5 @@
 import React, { Fragment, useContext, useState } from 'react';
 import './Create.css';
-import Header from '../Header/Header';
 import { FirebaseContext,AuthContext } from '../../store/Context';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
@@ -16,6 +15,7 @@ const Create = () => {
   const [price,setPrice] = useState()
   const [image,setImage] = useState()
   const date = new Date()
+  
   const handleSubmit = (e) =>{
     e.preventDefault()
     firebase.storage().ref(`/images/${image.name}`).put(image).then(({ref})=>{
@@ -28,14 +28,13 @@ const Create = () => {
           userId:user.uid,
           createdAt:date.toDateString()
         })
-      }).catch(err=>alert(err,"  can't upload"))
+      }).catch(err=>alert(err,"can't upload"))
       history.push('/')
     }).catch(err=>alert(err))
   }
 
   return (
     <Fragment>
-      <Header />
       <card>
         <div className="centerDiv">
           <form onSubmit={(e)=> handleSubmit(e) }>
@@ -73,7 +72,6 @@ const Create = () => {
             <input type="file" onChange={(e)=>{ 
               if(e.target.value[0] != null)
                 setImage(e.target.files[0])}} 
-              
               />
             <br />
             <button type='submit' className="uploadBtn">upload and Submit</button>

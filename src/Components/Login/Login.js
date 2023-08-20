@@ -36,7 +36,6 @@ function Login() {
             type="email"
             id="fname"
             name="email"
-            defaultValue="John"
             value={email}
             onChange={(e)=>{ setemail(e.target.value) }}
           />
@@ -48,7 +47,6 @@ function Login() {
             type="password"
             id="lname"
             name="password"
-            defaultValue="Doe"
             value={password}
             onChange={(e)=>{ setPassword(e.target.value) }}
           />

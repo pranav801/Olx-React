@@ -8,12 +8,12 @@ import './Signup.css';
 export default function Signup() {
 
   const history = useHistory()
+  const {firebase} = useContext(FirebaseContext)
+
   const [username,setUsername] = useState('');
   const [phone,setPhone] = useState('');
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
-  const {firebase} = useContext(FirebaseContext)
-
 
   const handleSubmit=(e)=>{
     e.preventDefault()
@@ -43,8 +43,6 @@ export default function Signup() {
             type="text"
             id="fname"
             name="name"
-            defaultValue="John"
-            value={username}
             onChange={(e)=>{ setUsername(e.target.value) }}
           />
           <br />
@@ -55,8 +53,6 @@ export default function Signup() {
             type="email"
             id="fname"
             name="email"
-            defaultValue="John"
-            value={email}
             onChange={(e)=>{ setEmail(e.target.value) }}
           />
           <br />
@@ -67,8 +63,6 @@ export default function Signup() {
             type="number"
             id="lname"
             name="phone"
-            defaultValue="Doe"
-            value={phone}
             onChange={(e)=>{ setPhone(e.target.value) }}
           />
           <br />
@@ -79,8 +73,6 @@ export default function Signup() {
             type="password"
             id="lname"
             name="password"
-            defaultValue="Doe"
-            value={password}
             onChange={(e)=>{ setPassword(e.target.value) }}
           />
           <br />

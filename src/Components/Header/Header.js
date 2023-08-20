@@ -27,7 +27,7 @@ function Header() {
     <div className="headerParentDiv">
       <div className="headerChildDiv">
         <div className="brandName">
-          <OlxLogo></OlxLogo>
+          <OlxLogo ></OlxLogo>
         </div>
         <div className="placeSearch">
           <Search></Search>
@@ -56,7 +56,6 @@ function Header() {
           <hr />
         </div>
         {user ? (<span style={{cursor:'pointer'}} onClick={()=>logout()} >Logout</span>):null  }
-         
 
         <div className="sellMenu">
           <SellButton></SellButton>
